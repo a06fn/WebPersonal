@@ -106,27 +106,39 @@
             color: #3d2817 !important;
         }
         .visitor-counter {  
-            position: fixed;  
-            bottom: 15px;  
-            left: 15px;  
-            background: rgba(255, 255, 255, 0.37);  
-            color: white;  
-            padding: 10px 14px;  
-            border-radius: 2px;  
-            font-size: 13px;  
-            z-index: 1000;  
-            box-shadow: 0 3px 10px rgba(0,0,0,0.3);  
-            text-align: center;  
-            border: 2px solid #3a6159;  
-            font-weight: bold;  
             display: flex;  
             align-items: center;  
             gap: 8px;  
-        }  
-        .visitor-counter img {  
-            vertical-align: middle;  
-            height: 20px;  
+            padding: 8px 12px;  
+            background: rgba(255, 255, 255, 0.15);  
+            border: 1px solid rgba(255, 255, 255, 0.2);  
+            border-radius: 6px;  
+            font-size: 12px;  
+            font-weight: 600;  
+            color: #f8fafc;  
+            transition: all 0.3s ease;  
         }
+
+        .visitor-counter:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .visitor-counter img {  
+            height: 18px;  
+            vertical-align: middle;  
+        }
+
+        /* TEMA CLARO - Contador con fondo oscuro */
+        body.light-mode .visitor-counter {
+            background: rgba(15, 23, 42, 0.15);
+            border-color: rgba(15, 23, 42, 0.2);
+            color: #3d2817;
+        }
+
+body.light-mode .visitor-counter:hover {
+    background: rgba(15, 23, 42, 0.25);
+}
     </style>
 </head>
 <body class="font-sans">
@@ -445,14 +457,13 @@
     </main>
 
     <!-- Footer Minimalista -->
-    <footer class="h-12 flex items-center px-8">
-
+    <footer class="h-12 flex items-center px-8 gap-4">
         <div class="visitor-counter" id="visitor-counter">
             <img id="counter-img" src="https://visitor-badge.laobi.icu/badge?page_id=bqchi.visitor-badge&left_text=Vistas&left_color=%23595959&right_color=%2388a423"/>
         </div>
 
-        <div class="max-w-6xl mx-auto w-full">
-            <p class="text-gray-500 text-xs text-center">© 2026 | Analista Programador & Developer</p>
+        <div class="flex-1 text-center">
+            <p class="text-gray-500 text-xs">© 2026 | Analista Programador & Developer</p>
         </div>
     </footer>
 
