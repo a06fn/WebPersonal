@@ -477,17 +477,21 @@
             video.className = 'video-modal-video';
             video.controls = true;
             video.autoplay = true;
+        
             const source = document.createElement('source');
             source.src = videoUrl;
             source.type = 'video/mp4';
             video.appendChild(source);
-            video.textContent = 'Tu navegador no soporta videos HTML5';
+        
+            // ← createTextNode en lugar de textContent
+            video.appendChild(document.createTextNode('Tu navegador no soporta videos HTML5'));
             
             content.appendChild(closeBtn);
             content.appendChild(video);
             backdrop.appendChild(content);
             document.body.appendChild(backdrop);
         }
+        
     </script>
 
 </body>
