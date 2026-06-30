@@ -480,7 +480,10 @@
             source.src = videoUrl;
             source.type = 'video/mp4';
             video.appendChild(source);
-            video.textContent = 'Tu navegador no soporta videos HTML5';
+
+            // Crear nodo de texto DESPUÉS de agregar source
+            const fallbackText = document.createTextNode('Tu navegador no soporta videos HTML5');
+            video.appendChild(fallbackText);
             
             content.appendChild(closeBtn);
             content.appendChild(video);
